@@ -3,8 +3,9 @@
 #include<iostream>//對齊右邊 
 using namespace std;
 int main(){
-	int height;
-	cout<<"請輸入三角形高度=> ";
+
+     int height;
+     cout<<"請輸入三角形高度=> ";
      cin>>height;
      cout<<endl;
 	for(int i=1;i<=height;i++){
