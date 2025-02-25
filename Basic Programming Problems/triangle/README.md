@@ -27,8 +27,8 @@ using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-  cin>>height;
-  cout<<endl;
+        cin>>height;
+        cout<<endl;
 	for(int i=0;i<=height;i++){
 		for(int j=1;j<=i;j++){
 			cout<<' ';
@@ -49,8 +49,8 @@ using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-  cin>>height;
-  cout<<endl;
+        cin>>height;
+        cout<<endl;
 	for(int i=1;i<=height;i++){
 		for(int j=1;j<=i;j++){
 			cout<<'*';
@@ -68,8 +68,8 @@ using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-  cin>>height;
-  cout<<endl;
+        cin>>height;
+        cout<<endl;
 	for(int i=0;i<=height;i++){
 		for(int j=1;j<=height-i;j++){
 			cout<<'*';
@@ -88,7 +88,7 @@ using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-  cin>>height;
+        cin>>height;
 	for(int i=1;i<=height;i++){
 	    for(int j=1;j<=height-i;j++){
 		    cout << ' ';
@@ -109,8 +109,8 @@ using namespace std;
 int main(){
 	int h;
 	cout<<"請輸入三角形高度=> ";
-  cin>>h;
-  cout<<endl;
+        cin>>h;
+        cout<<endl;
 	for(int i=1;i<=h;i++){
 		for(int j=1;j<=h-i;j++){
 			cout<<' ';
@@ -138,8 +138,8 @@ using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-    cin>>height;
-    cout<<endl;
+        cin>>height;
+        cout<<endl;
 	for(int i=1;i<=height;i++){
 		for(int j=1;j<=2*height-1;j++){
 			if(i+j==height+1||j-i==height-1||i==height) //左斜邊、右斜邊、底邊 
