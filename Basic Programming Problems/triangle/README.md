@@ -17,7 +17,7 @@ int main(){
 		cout<<endl;
 	} 
 	return 0;
-
+}
 
 ----------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/8cfd3aa4-cfb7-4bc6-bc12-341c00bbcc55)
