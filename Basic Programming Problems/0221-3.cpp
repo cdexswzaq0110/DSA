@@ -1,8 +1,8 @@
-#include<iostream>//3.兩個左右對齊 
+#include<iostream>//3. 
 using namespace std;
 int main(){
 	int h;
-	cout<<"請輸入三角形高度=> ";
+	cout<<"Please enter the triangle height=> ";
     cin>>h;
     cout<<endl;
 	for(int i=1;i<=h;i++){
