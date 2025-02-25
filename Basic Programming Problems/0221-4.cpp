@@ -1,13 +1,13 @@
-#include<iostream>//4.ªÅ¤ß¤T¨¤§Î 
+#include<iostream>//4.
 using namespace std;
 int main(){
 	int height;
-	cout<<"½Ð¿é¤J¤T¨¤§Î°ª«×=> ";
+	cout<<"Please enter the triangle height=> ";
     cin>>height;
     cout<<endl;
 	for(int i=1;i<=height;i++){
 		for(int j=1;j<=2*height-1;j++){
-			if(i+j==height+1||j-i==height-1||i==height) //¥ª±×Ãä¡B¥k±×Ãä¡B©³Ãä 
+			if(i+j==height+1||j-i==height-1||i==height) //å·¦æ–œé‚Šã€å³æ–œé‚Šã€åº•é‚Š 
 			   cout<<"*";
 			else
 			   cout<<" ";
