@@ -21,7 +21,7 @@ int main(){
 ```
 ----------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/8cfd3aa4-cfb7-4bc6-bc12-341c00bbcc55)
-
+```
 #include<iostream>////倒三角形對齊左
 using namespace std;
 int main(){
@@ -40,9 +40,10 @@ int main(){
 	} 
 	return 0;
 }
+```
 --------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/252465d6-8a2e-4cc4-b8c7-f5f4de7a0902)
-
+```
 #include<iostream>//對齊左邊 
 using namespace std;
 int main(){
@@ -58,9 +59,10 @@ int main(){
 	} 
 	return 0;
 }
+```
 --------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/03380a32-8b19-442b-951e-21dc28647bc1)
-
+```
 #include<iostream>//倒三角形對齊左 
 using namespace std;
 int main(){
@@ -77,9 +79,10 @@ int main(){
 	cout<<endl;
 	return 0;
 }
+```
 --------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/a4abb899-0b6c-461b-94d1-5ea28c483198)
-
+```
 #include<iostream>//左右對齊 
 using namespace std;
 int main(){
@@ -97,9 +100,10 @@ int main(){
     } 
 	return 0;
 }
+```
 --------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/1fdc1cd9-0ceb-49d0-b6c5-1005f2ccf164)
-
+```
 #include<iostream>//兩個左右對齊 
 using namespace std;
 int main(){
@@ -125,9 +129,10 @@ int main(){
 	} 
 	return 0;
 }
+```
 -----------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/d003dcbb-6adb-41f4-b13e-59aaa79029ab)
-
+```
 #include<iostream>//空心三角形 
 using namespace std;
 int main(){
@@ -146,7 +151,7 @@ int main(){
 	}
 	return 0;
 }
-
+```
 
 
 
