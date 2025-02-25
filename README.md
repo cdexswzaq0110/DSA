@@ -68,7 +68,7 @@
     - [Space Complexity](#space-complexity)
 5. [Conclusion](#conclusion)
 6. [References](#references)
-   
+
 ## 1. Introduction
 This repository contains a comprehensive collection of data structures and algorithms implemented in various programming languages. This project aims to provide clear and efficient implementations of commonly used data structures and algorithms, along with explanations and analysis of their complexities.
 
@@ -186,53 +186,52 @@ This repository contains a comprehensive collection of data structures and algor
 - **Description**: A greedy algorithm that finds a minimum spanning tree for a connected weighted graph.
 
 ##### Prim’s Algorithm
-- **Description**: A greedy algorithm that builds a minimum spanning tree from a starting vertex.
+- **Description**: A greedy algorithm that builds a minimum spanning tree for a connected weighted graph by adding edges with the minimum weight.
 
 ### 3.4 Dynamic Programming
 #### 3.4.1 Optimal Substructure
-- **Description**: A property of a problem that can be solved optimally by combining the optimal solutions of its subproblems.
+- **Description**: A property of a problem that can be broken down into smaller, simpler subproblems which can be solved independently.
 
 #### 3.4.2 Memoization
-- **Description**: An optimization technique that stores previously computed results to avoid redundant calculations.
+- **Description**: An optimization technique that involves storing the results of expensive function calls and returning the cached result when the same inputs occur again.
 
 #### 3.4.3 Tabulation
-- **Description**: A bottom-up approach to solving problems by iteratively filling out a table.
+- **Description**: A bottom-up approach to dynamic programming that involves filling up a table based on previously computed values.
 
 #### 3.4.4 Common Dynamic Programming Problems
 ##### Fibonacci Sequence
-- **Description**: A sequence where each number is the sum of the two preceding ones.
+- **Description**: A series of numbers where each number is the sum of the two preceding ones, commonly used as an introductory example of dynamic programming.
 
 ##### Knapsack Problem
-- **Description**: A problem of selecting a subset of items with given weights and values to maximize value without exceeding capacity.
+- **Description**: A problem in combinatorial optimization where the goal is to determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
 
 ##### Longest Common Subsequence
-- **Description**: A problem of finding the longest subsequence present in both sequences.
+- **Description**: A classic problem that seeks the longest subsequence present in two sequences.
 
 ##### Matrix Chain Multiplication
-- **Description**: A problem of determining the most efficient way to multiply a given sequence of matrices.
+- **Description**: A problem that involves determining the most efficient way to multiply a given sequence of matrices.
 
 ### 3.5 Other Algorithms
 #### 3.5.1 Backtracking
-- **Description**: An algorithmic technique for solving problems incrementally by trying partial solutions and abandoning them if they are not valid.
+- **Description**: An algorithmic technique for solving problems incrementally, one step at a time, and removing those solutions that fail to satisfy the constraints.
 
 #### 3.5.2 Greedy Algorithms
-- **Description**: Algorithms that make the locally optimal choice at each stage in hopes of finding a global optimum.
+- **Description**: An algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most immediate benefit.
 
 #### 3.5.3 Divide and Conquer Algorithms
-- **Description**: Algorithms that divide the problem into smaller subproblems, solve them independently, and combine their solutions.
+- **Description**: An algorithm design paradigm that works by recursively breaking down a problem into two or more sub-problems of the same or related type.
 
 #### 3.5.4 Randomized Algorithms
-- **Description**: Algorithms that make random choices in their logic to achieve good average-case performance.
+- **Description**: Algorithms that make random choices during their process of execution to produce results.
 
 #### 3.5.5 String Algorithms
 ##### Knuth-Morris-Pratt (KMP) Algorithm
-- **Description**: An efficient string searching algorithm that preprocesses the pattern to avoid redundant comparisons.
+- **Description**: An efficient string searching algorithm that avoids unnecessary comparisons.
 
 ##### Rabin-Karp Algorithm
 - **Description**: A string searching algorithm that uses hashing to find any one of a set of pattern strings in a text.
 
 ## 4. Complexity Analysis
-
 ### 4.1 Time Complexity
 - **Description**: A computational complexity that describes the amount of time it takes to run an algorithm as a function of the length of the input.
 
@@ -240,11 +239,7 @@ This repository contains a comprehensive collection of data structures and algor
 - **Description**: A computational complexity that describes the amount of memory space required by an algorithm as a function of the length of the input.
 
 ## 5. Conclusion
-This repository serves as a comprehensive guide to understanding and implementing various data structures and algorithms. For further exploration, feel free to contribute or enhance existing implementations.
+This repository aims to serve as a comprehensive resource for understanding fundamental data structures and algorithms. Each section provides insight into the concepts and their implementations.
 
 ## 6. References
-- [GeeksforGeeks](https://www.geeksforgeeks.org/)
-- [Wikipedia](https://www.wikipedia.org/)
-- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/)
-- [Introduction to Algorithms (CLRS)](https://mitpress.mit.edu/books/introduction-algorithms)
-
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
