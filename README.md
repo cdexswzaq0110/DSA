@@ -42,6 +42,7 @@
             - [Dijkstra’s Algorithm](#dijkstras-algorithm)
             - [Bellman-Ford Algorithm](#bellman-ford-algorithm)
             - [Floyd-Warshall Algorithm](#floyd-warshall-algorithm)
+            - [Johnson’s Algorithm](#johnsons-algorithm)
         - [Minimum Spanning Tree Algorithms](#minimum-spanning-tree-algorithms)
             - [Kruskal’s Algorithm](#kruskals-algorithm)
             - [Prim’s Algorithm](#prims-algorithm)
@@ -67,7 +68,7 @@
     - [Space Complexity](#space-complexity)
 5. [Conclusion](#conclusion)
 6. [References](#references)
-
+   
 ## 1. Introduction
 This repository contains a comprehensive collection of data structures and algorithms implemented in various programming languages. This project aims to provide clear and efficient implementations of commonly used data structures and algorithms, along with explanations and analysis of their complexities.
 
