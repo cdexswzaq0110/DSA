@@ -1,12 +1,11 @@
 ![image](https://github.com/user-attachments/assets/54aa0d46-1218-4528-849e-8919be9994b7)
-
 #include<iostream>//對齊右邊 
 using namespace std;
 int main(){
 	int height;
 	cout<<"請輸入三角形高度=> ";
-  cin>>height;
-  cout<<endl;
+     cin>>height;
+     cout<<endl;
 	for(int i=1;i<=height;i++){
 		for(int j=1;j<=height-i;j++){
 			cout<<' ';
@@ -18,7 +17,7 @@ int main(){
 	} 
 	return 0;
 }
---------------------------------------------------------------
+----------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/8cfd3aa4-cfb7-4bc6-bc12-341c00bbcc55)
 
 #include<iostream>////倒三角形對齊左
