@@ -30,7 +30,8 @@ int main() {
 ```
 ----------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/978dac81-000d-4bb4-901f-d88347f23f9e)
-![image](https://github.com/user-attachments/assets/c0410971-38bd-4096-b98b-d140ca7f6f87)
+![image](https://github.com/user-attachments/assets/1a00dcda-7f28-439b-b24f-7706dcc164e0)
+
 
 ```
 #include <iostream>
