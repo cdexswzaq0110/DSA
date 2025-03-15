@@ -67,3 +67,54 @@ int main() {
 }
 
 ```
+----------------------------------------------------------
+![image](https://github.com/user-attachments/assets/5a6e0fbc-883f-4498-8d75-c89d47d1748f)
+![image](https://github.com/user-attachments/assets/3e3b6425-d420-42fa-a831-962529f6c3d3)
+
+```
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int m, n;
+    cin >> m >> n;
+
+    vector<vector<int> > A(n, vector<int>(m)); // 先建立轉置後的矩陣空間
+    vector<vector<int> > original(m, vector<int>(n)); // 儲存原始矩陣
+
+    // 讀取矩陣元素
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> original[i][j];
+            A[j][i] = original[i][j]; // 直接轉置存入 A
+        }
+    }
+
+    // 輸出原始矩陣
+    cout << "Original:" << endl;
+    for (int i = 0; i < m; i++) {
+        cout << "[";
+        for (int j = 0; j < n; j++) {
+            if (j > 0) cout << " ";
+            cout << original[i][j];
+        }
+        cout << "]" << endl;
+    }
+
+    // 輸出轉置矩陣
+    cout << "Transpose:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "[";
+        for (int j = 0; j < m; j++) {
+            if (j > 0) cout << " ";
+            cout << A[i][j];
+        }
+        cout << "]" << endl;
+    }
+
+    return 0;
+}
+
+```
+
