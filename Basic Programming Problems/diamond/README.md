@@ -117,4 +117,106 @@ int main() {
 }
 
 ```
+----------------------------------------------------------
+![image](https://github.com/user-attachments/assets/2264f5b4-8523-47bd-92b0-87ae4726ba04)
+![image](https://github.com/user-attachments/assets/f4122bff-546f-4892-8f37-3f593a8727b3)
+
+
+```
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int M, N;
+vector<vector<int> > grid;
+vector<vector<bool> > visited;
+int maxArea = 0;
+
+// 方向向量 (上, 下, 左, 右)
+int dx[4] = {-1, 1, 0, 0};
+int dy[4] = {0, 0, -1, 1};
+
+// 深度優先搜尋 (DFS) 計算相連區域面積
+int dfs(int x, int y) {
+    if (x < 0 || x >= M || y < 0 || y >= N || visited[x][y] || grid[x][y] != 0)
+        return 0;
+
+    visited[x][y] = true;  // 標記為已訪問
+    int area = 1;  // 當前區塊計算進面積
+
+    // 向四個方向擴展搜尋
+    for (int i = 0; i < 4; i++) {
+        area += dfs(x + dx[i], y + dy[i]);
+    }
+
+    return area;
+}
+
+int main() {
+    cin >> M >> N;
+    grid.resize(M, vector<int>(N));
+    visited.resize(M, vector<bool>(N, false));
+
+    // 讀取輸入
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> grid[i][j];
+        }
+    }
+
+    // 遍歷整個矩陣，找出最大的低窪區域
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (grid[i][j] == 0 && !visited[i][j]) {
+                maxArea = max(maxArea, dfs(i, j));
+            }
+        }
+    }
+
+    cout << maxArea << endl;
+    return 0;
+}
+
+```
+
+----------------------------------------------------------
+
+
+```
+
+
+```
+
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
