@@ -29,7 +29,7 @@ int main() {
 }
 ```
 ----------------------------------------------------------
-![image](https://github.com/user-attachments/assets/978dac81-000d-4bb4-901f-d88347f23f9e)
+![image](https://github.com/user-attachments/assets/3afe500a-f916-4498-8e84-dfa19ddd1541)
 ![image](https://github.com/user-attachments/assets/1a00dcda-7f28-439b-b24f-7706dcc164e0)
 
 
