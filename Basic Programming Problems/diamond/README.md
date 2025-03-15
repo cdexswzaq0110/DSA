@@ -68,7 +68,7 @@ int main() {
 
 ```
 ----------------------------------------------------------
-![image](https://github.com/user-attachments/assets/5a6e0fbc-883f-4498-8d75-c89d47d1748f)
+![image](https://github.com/user-attachments/assets/2e06bec7-4110-4134-ba74-398a2bbf1b3c)
 ![image](https://github.com/user-attachments/assets/3e3b6425-d420-42fa-a831-962529f6c3d3)
 
 ```
