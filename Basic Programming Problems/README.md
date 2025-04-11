@@ -177,19 +177,78 @@ int main() {
 
 ```
 --------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/2d9a0bf7-57aa-449e-be9b-4484bf2c122e) ![image](https://github.com/user-attachments/assets/eb1bd269-9500-4a97-9535-19c8382937d7)
+
 
 ```
+#include <iostream>
+using namespace std;
 
+int compute(int score) {
+    if (score < 0 || score > 100) {
+        return -1;
+    }
+    if (score >= 60) {
+        return score + 5;
+    }
+    return score + 10;
+}
+
+int main() {
+    int score;
+    cin >> score;
+    int result = compute(score); // 呼叫 compute 函式
+    cout << result << endl;
+    return 0;
+}
 ```
 --------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/ccf01011-7386-4d21-981e-75167ed53623)
 
 ```
+#include <iostream>
+#include <string>
 
+int main() {
+    std::string str1, str2;
+    std::cin >> str1;
+    std::cin >> str2;
+
+    std::cout  << str1.size() << "\n";
+    std::cout  << str2.length() << "\n";
+   
+    std::string result = str1 + str2;
+    std::cout  << result << "\n";
+   
+    return 0;
+}
 ```
 --------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/f56f1a85-f2e5-4a55-a943-02498c1e77c3)
 
 ```
+#include <iostream>
 
+int main() {
+    int count[6] = {0}; // 0-1 1-2 2-3 3-4 4-5 5-6 (arr-num)
+    int errorCount = 0;
+    int num;
+   
+    for (int i = 0; i < 10; ++i) {
+        std::cin >> num;
+        if (num >= 1 && num <= 6) {
+            count[num - 1]++;
+        } else {
+            errorCount++;
+        }
+    }
+   
+    for (int i = 0; i < 6; ++i) {
+        std::cout << "number" << (i + 1) << ":" << count[i] << "\n";
+    }
+    std::cout << "error:" << errorCount << "\n";
+    return 0;
+}
 ```
 --------------------------------------------------------------
 
