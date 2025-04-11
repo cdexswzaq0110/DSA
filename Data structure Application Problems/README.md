@@ -115,10 +115,34 @@ int main() {
 ```
 
 ----------------------------------------------------------
+![image](https://github.com/user-attachments/assets/9cdc7616-9904-49c2-aaa5-0cc77dd49f92)
+
+```
+#include <iostream>
+using namespace std;
+
+// 計算第 n 項費氏數列的值
+int compute(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return compute(n - 1) + compute(n - 2);
+}
+
+int main() {
+    int n;
+    cin >> n;
+    for (int i = n; i >= 1; i--) {
+        cout << "fib(" << i << ")=" << compute(i) << endl;
+    }
+    return 0;
+}
+ 
+```
+
+----------------------------------------------------------
 
 
 ```
-
 
 ```
 
