@@ -115,7 +115,7 @@ int main() {
 ```
 
 ----------------------------------------------------------
-![image](https://github.com/user-attachments/assets/9cdc7616-9904-49c2-aaa5-0cc77dd49f92)
+![image](https://github.com/user-attachments/assets/eb1c9db4-1e4b-4d7d-917d-60f7380ade98)
 
 ```
 #include <iostream>
