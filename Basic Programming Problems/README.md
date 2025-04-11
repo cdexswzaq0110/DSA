@@ -113,6 +113,64 @@ int main() {
 
 ```
 --------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/d47ff7c9-6c17-4c36-8615-3b1c621414dd)
+```
+#include <iostream>
+#include <string>
+#include <cctype>  // for islower, isupper, tolower, toupper
+using namespace std;
+
+int main() {
+    string str;
+    int n;
+    cin >> str >> n;
+    char original = str[n];
+    char converted;
+
+    if (islower(original)) {
+        converted = toupper(original);
+    } else if (isupper(original)) {
+        converted = tolower(original);
+    } else {
+        converted = original;  // 非字母就不轉
+    }
+
+    str[n] = converted;
+
+    cout << "The letter that was selected is: " << converted << endl;
+    cout << str << endl;
+
+    return 0;
+}
+
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+```
+
+```
+--------------------------------------------------------------
+
 
 
 
