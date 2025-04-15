@@ -251,7 +251,7 @@ int main() {
 }
 ```
 --------------------------------------------------------------
-![image](https://github.com/user-attachments/assets/a0610016-24c5-4efa-b344-4ca8f785b03b)
+![image](https://github.com/user-attachments/assets/c7d75b94-6b06-4fc3-a5f3-75327c649659)
 ![image](https://github.com/user-attachments/assets/d2602e01-0870-4bda-ba87-e64ff2d39259)
 ![image](https://github.com/user-attachments/assets/cdc3e563-22cf-41da-aba9-58ecd957bbf6)
 
