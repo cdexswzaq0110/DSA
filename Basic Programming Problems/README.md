@@ -251,9 +251,45 @@ int main() {
 }
 ```
 --------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/a0610016-24c5-4efa-b344-4ca8f785b03b)
+![image](https://github.com/user-attachments/assets/d2602e01-0870-4bda-ba87-e64ff2d39259)
+![image](https://github.com/user-attachments/assets/cdc3e563-22cf-41da-aba9-58ecd957bbf6)
 
 ```
+#include <iostream>
+#include <cstring>
 
+int main() {
+    char str1[129], str2[129];
+    int n;
+   
+    std::cin.getline(str1, 129);
+	//fgets(str1, sizeof(str1), stdin); /*可以儲存包含空白的字串*/
+    //str1[strcspn(str1,"\n")]='\0'; /*strcspn從字元陣列中找到目標字元的索引值*/
+    std::cin.getline(str2, 129);
+   
+    if (std::strlen(str1) != std::strlen(str2)) {
+        std::cout << "error" << std::endl;
+        return 1;
+    }
+   
+    std::cin >> n; //比較長度
+   
+    if (n > std::strlen(str1)) {
+        std::cout << "error" << std::endl;
+        return 1;
+    }
+   
+    int cmp = std::strncmp(str1, str2, n);
+    if (cmp > 0) {
+        std::cout << str1 << " > " << str2 << std::endl;
+    } else if (cmp < 0) {
+        std::cout << str1 << " < " << str2 << std::endl;
+    } else {
+        std::cout << str1 << " = " << str2 << std::endl;
+    }  
+    return 0;
+}
 ```
 --------------------------------------------------------------
 
