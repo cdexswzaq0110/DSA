@@ -2,7 +2,7 @@
 
 ---Advance C/C++ Programs---
 
-- Divide and Conquer
+1. Divide and Conquer
 ---------------------------------------------------------------------------------
 Idea: Break the problem into smaller subproblems, solve them recursively, and combine their solutions.
 
