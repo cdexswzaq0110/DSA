@@ -2,13 +2,14 @@
 
 ---Advance C/C++ Programs---
 
-''
+`` 
 1. Divide and Conquer
+______________________________________
 - Idea: Break the problem into smaller subproblems, solve them recursively, and combine their solutions.
 - Key Properties: Recursion, problem decomposition, merge step
 - Common Use Cases: Sorting, searching, matrix multiplication
 - Examples: Merge Sort, Quick Sort, Binary Search, Strassen’s Matrix Multiplication
-''
+``
 2. Dynamic Programming (DP)
 ---------------------------------------------------------------------------------
 Idea: Solve problems by combining solutions to overlapping subproblems. Store results to avoid redundant computation.
