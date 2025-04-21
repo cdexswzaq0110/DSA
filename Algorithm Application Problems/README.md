@@ -4,6 +4,7 @@
 
 1. Divide and Conquer
 ---------------------------------------------------------------------------------
+
 Idea: Break the problem into smaller subproblems, solve them recursively, and combine their solutions.
 
 Key Properties: Recursion, problem decomposition, merge step
