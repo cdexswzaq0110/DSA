@@ -1,9 +1,31 @@
 *** This is a Advanced Programming Problem Solving Exercises. ***
 
 ---Advance C/C++ Programs---
+![image](https://github.com/user-attachments/assets/1fda761a-bd0c-4f85-9e44-fe5ce7a76f2b)
+![image](https://github.com/user-attachments/assets/65843fdd-cef6-4f4b-8797-589112b013f4)
+![image](https://github.com/user-attachments/assets/2aee89c6-d8fd-4051-831a-33d4783e6216)
 
 ```
+
 ---Funny Decoder---
+
+![image](https://github.com/user-attachments/assets/0c2af334-c6d5-42dc-ac8f-b5f55e0d7e35)
+![image](https://github.com/user-attachments/assets/10011a41-10f9-4c55-828f-be204df3c6f3)
+![image](https://github.com/user-attachments/assets/4dd01990-aab6-4db7-bb3d-fdcb7a3230e0)
+
+/*
+
+10 5
+Anlld km  wna oyakoor e .*dspk l u**lJaayal** cb**
+
+5 6
+Kenodiwsgwle erp o.*
+
+7 5
+A ctsltopioeuhrdadanskens. r  w**o*
+
+*/
+
 
 #include <iostream>              
 #include <vector>                
