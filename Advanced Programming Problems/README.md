@@ -3,7 +3,7 @@
 ---Advance C/C++ Programs---
 
 ```
--Funny Decoder-
+---Funny Decoder---
 
 #include <iostream>              
 #include <vector>                
