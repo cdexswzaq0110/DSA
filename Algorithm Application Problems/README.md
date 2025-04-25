@@ -15,14 +15,16 @@
 - Idea: Solve problems by combining solutions to overlapping subproblems. Store results to avoid redundant computation.
 - Key Properties: Optimal substructure, overlapping subproblems, memoization or tabulation
 - Common Use Cases: Optimization problems, sequences, paths
-- Examples: Longest Common Subsequence (LCS), Matrix Chain Multiplication, Rod Cutting, Optimal Binary Search Tree, Fibonacci Sequence (DP version)
+- Examples: Longest Common Subsequence (LCS), Matrix Chain Multiplication, Rod Cutting, Optimal Binary Search Tree,
+            Fibonacci Sequence (DP version)
 
 3. Greedy Algorithms
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 - Idea: Make the best local choice at each step, hoping this leads to a global optimum.
 - Key Properties: Greedy-choice property, optimal substructure
 - Common Use Cases: Resource allocation, scheduling, graph optimization
-- Examples: Activity Selection, Huffman Coding, Kruskal’s Algorithm (Minimum Spanning Tree), Prim’s Algorithm (Minimum Spanning Tree), Dijkstra’s Algorithm (Shortest Paths)
+- Examples: Activity Selection, Huffman Coding, Kruskal’s Algorithm (Minimum Spanning Tree),
+            Prim’s Algorithm (Minimum Spanning Tree), Dijkstra’s Algorithm (Shortest Paths)
 
 4. Backtracking
 ----------------------------------------------------------------------------------------------------------------------------------------------------
