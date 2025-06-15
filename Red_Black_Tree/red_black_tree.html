@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <title>紅黑樹操作模擬器</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input {
+      padding: 5px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin: 5px;
+    }
+
+    #graph {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>紅黑樹操作模擬器</h1>
+  <div>
+    <input type="number" id="value" placeholder="請輸入數字" />
+    <button onclick="insertValue()">插入</button>
+    <button onclick="deleteValue()">刪除</button>
+    <button onclick="searchValue()">搜尋</button>
+    <button onclick="showInOrder()">中序輸出</button>
+    <button onclick="downloadImage()">下載樹圖</button>
+  </div>
+  <div id="graph">正在初始化樹狀圖...</div>
+  <div id="output"></div>
+
+  <script>
+    class Node {
+      constructor(value, color = 'r', parent = null) {
+        this.value = value;
+        this.color = color;
+        this.parent = parent;
+        this.left = null;
+        this.right = null;
+      }
+    }
+
+    class RedBlackTree {
+      constructor() {
+        this.NIL = new Node(null, 'b');
+        this.root = this.NIL;
+      }
+
+      insert(value) {
+        const newNode = new Node(value);
+        newNode.left = this.NIL;
+        newNode.right = this.NIL;
+        let parent = null;
+        let current = this.root;
+
+        while (current !== this.NIL) {
+          parent = current;
+          if (value < current.value) current = current.left;
+          else current = current.right;
+        }
+
+        newNode.parent = parent;
+        if (parent === null) this.root = newNode;
+        else if (value < parent.value) parent.left = newNode;
+        else parent.right = newNode;
+
+        newNode.color = 'r';
+        this.fixInsert(newNode);
+      }
+
+      fixInsert(z) {
+        while (z.parent && z.parent.color === 'r') {
+          const gp = z.parent.parent;
+          if (z.parent === gp.left) {
+            const y = gp.right;
+            if (y && y.color === 'r') {
+              z.parent.color = y.color = 'b';
+              gp.color = 'r';
+              z = gp;
+            } else {
+              if (z === z.parent.right) {
+                z = z.parent;
+                this.rotateLeft(z);
+              }
+              z.parent.color = 'b';
+              gp.color = 'r';
+              this.rotateRight(gp);
+            }
+          } else {
+            const y = gp.left;
+            if (y && y.color === 'r') {
+              z.parent.color = y.color = 'b';
+              gp.color = 'r';
+              z = gp;
+            } else {
+              if (z === z.parent.left) {
+                z = z.parent;
+                this.rotateRight(z);
+              }
+              z.parent.color = 'b';
+              gp.color = 'r';
+              this.rotateLeft(gp);
+            }
+          }
+        }
+        this.root.color = 'b';
+      }
+
+      rotateLeft(x) {
+        const y = x.right;
+        x.right = y.left;
+        if (y.left !== this.NIL) y.left.parent = x;
+        y.parent = x.parent;
+        if (!x.parent) this.root = y;
+        else if (x === x.parent.left) x.parent.left = y;
+        else x.parent.right = y;
+        y.left = x;
+        x.parent = y;
+      }
+
+      rotateRight(x) {
+        const y = x.left;
+        x.left = y.right;
+        if (y.right !== this.NIL) y.right.parent = x;
+        y.parent = x.parent;
+        if (!x.parent) this.root = y;
+        else if (x === x.parent.right) x.parent.right = y;
+        else x.parent.left = y;
+        y.right = x;
+        x.parent = y;
+      }
+
+      delete(value) {
+        const nodeToDelete = this._findNode(this.root, value);
+        if (nodeToDelete === this.NIL || !nodeToDelete) return;
+
+        let y = nodeToDelete;
+        let yOriginalColor = y.color;
+        let x;
+
+        if (nodeToDelete.left === this.NIL) {
+          x = nodeToDelete.right;
+          this._transplant(nodeToDelete, nodeToDelete.right);
+        } else if (nodeToDelete.right === this.NIL) {
+          x = nodeToDelete.left;
+          this._transplant(nodeToDelete, nodeToDelete.left);
+        } else {
+          y = this._minimum(nodeToDelete.right);
+          yOriginalColor = y.color;
+          x = y.right;
+          if (y.parent === nodeToDelete) {
+            x.parent = y;
+          } else {
+            this._transplant(y, y.right);
+            y.right = nodeToDelete.right;
+            y.right.parent = y;
+          }
+          this._transplant(nodeToDelete, y);
+          y.left = nodeToDelete.left;
+          y.left.parent = y;
+          y.color = nodeToDelete.color;
+        }
+
+        if (yOriginalColor === 'b') this._fixDelete(x);
+      }
+
+      _transplant(u, v) {
+        if (!u.parent) this.root = v;
+        else if (u === u.parent.left) u.parent.left = v;
+        else u.parent.right = v;
+        v.parent = u.parent;
+      }
+
+      _minimum(node) {
+        while (node.left !== this.NIL) node = node.left;
+        return node;
+      }
+
+      _fixDelete(x) {
+        while (x !== this.root && x.color === 'b') {
+          if (x === x.parent.left) {
+            let w = x.parent.right;
+            if (w.color === 'r') {
+              w.color = 'b';
+              x.parent.color = 'r';
+              this.rotateLeft(x.parent);
+              w = x.parent.right;
+            }
+            if (w.left.color === 'b' && w.right.color === 'b') {
+              w.color = 'r';
+              x = x.parent;
+            } else {
+              if (w.right.color === 'b') {
+                w.left.color = 'b';
+                w.color = 'r';
+                this.rotateRight(w);
+                w = x.parent.right;
+              }
+              w.color = x.parent.color;
+              x.parent.color = 'b';
+              w.right.color = 'b';
+              this.rotateLeft(x.parent);
+              x = this.root;
+            }
+          } else {
+            let w = x.parent.left;
+            if (w.color === 'r') {
+              w.color = 'b';
+              x.parent.color = 'r';
+              this.rotateRight(x.parent);
+              w = x.parent.left;
+            }
+            if (w.right.color === 'b' && w.left.color === 'b') {
+              w.color = 'r';
+              x = x.parent;
+            } else {
+              if (w.left.color === 'b') {
+                w.right.color = 'b';
+                w.color = 'r';
+                this.rotateLeft(w);
+                w = x.parent.left;
+              }
+              w.color = x.parent.color;
+              x.parent.color = 'b';
+              w.left.color = 'b';
+              this.rotateRight(x.parent);
+              x = this.root;
+            }
+          }
+        }
+        x.color = 'b';
+      }
+
+      _findNode(root, value) {
+        while (root !== this.NIL && root.value !== value) {
+          root = value < root.value ? root.left : root.right;
+        }
+        return root;
+      }
+
+      toDot() {
+        let dot = 'digraph G {\n';
+        dot += '  node [fontname="Arial", shape=circle, style=filled];\n';
+        dot += '  edge [arrowhead=vee];\n';
+        dot += this._toDotNodes(this.root);
+        dot += this._toDotEdges(this.root);
+        dot += '}';
+        return dot;
+      }
+
+      _toDotNodes(node) {
+        if (node === this.NIL) return '';
+        let color = node.color === 'r' ? 'red' : 'black';
+        let result = `"${node.value}" [style=filled, fillcolor=${color}, fontcolor=white];\n`;
+        result += this._toDotNodes(node.left);
+        result += this._toDotNodes(node.right);
+        return result;
+      }
+
+      _toDotEdges(node) {
+        if (node === this.NIL) return '';
+        let result = '';
+        if (node.left !== this.NIL) result += `"${node.value}" -> "${node.left.value}" [xlabel="L", labeldistance=1.5, labelangle=30];
+`;
+        if (node.right !== this.NIL) result += `"${node.value}" -> "${node.right.value}" [xlabel="R", labeldistance=1.5, labelangle=-30];
+`;
+        result += this._toDotEdges(node.left);
+        result += this._toDotEdges(node.right);
+        return result;
+      }
+
+      has(value) {
+        let current = this.root;
+        while (current !== this.NIL) {
+          if (current.value === value) return true;
+          current = value < current.value ? current.left : current.right;
+        }
+        return false;
+      }
+
+      inOrderTraversal() {
+        const result = [];
+        const dfs = (node) => {
+          if (node === this.NIL) return;
+          dfs(node.left);
+          result.push(node.value);
+          dfs(node.right);
+        };
+        dfs(this.root);
+        return result.join(', ');
+      }
+    }
+
+    const tree = new RedBlackTree();
+
+    function insertValue() {
+      const val = parseInt(document.getElementById('value').value);
+      if (!isNaN(val)) {
+        tree.insert(val);
+        renderTree();
+        document.getElementById('output').textContent = `插入 ${val}`;
+      }
+    }
+
+    function deleteValue() {
+      const val = parseInt(document.getElementById('value').value);
+      if (!isNaN(val)) {
+        tree.delete(val);
+        renderTree();
+        document.getElementById('output').textContent = `刪除 ${val}`;
+      }
+    }
+
+    function searchValue() {
+      const val = parseInt(document.getElementById('value').value);
+      if (!isNaN(val)) {
+        const found = tree.has(val);
+        document.getElementById('output').textContent = found ? `找到節點：${val}` : `找不到節點：${val}`;
+      }
+    }
+
+    function showInOrder() {
+      const order = tree.inOrderTraversal();
+      document.getElementById('output').textContent = `中序輸出：${order}`;
+    }
+
+    function renderTree() {
+      const dot = tree.toDot();
+      const viz = new Viz();
+      viz.renderSVGElement(dot)
+        .then(function (element) {
+          const graph = document.getElementById('graph');
+          graph.innerHTML = '';
+          element.setAttribute('id', 'svgTree');
+          graph.appendChild(element);
+        })
+        .catch(error => {
+          document.getElementById('graph').textContent = '無法顯示樹圖，請確認網路或程式庫是否載入';
+          console.error(error);
+        });
+    }
+
+    function downloadImage() {
+      const svg = document.getElementById('svgTree');
+      if (!svg) return alert("尚未載入 SVG 圖形");
+      const svgData = new XMLSerializer().serializeToString(svg);
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      const svgBlob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+      img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+        const imgURI = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+
+        const link = document.createElement('a');
+        link.download = 'rb_tree.png';
+        link.href = imgURI;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+      img.src = url;
+    }
+
+    renderTree();
+  </script>
+</body>
+
+</html>
